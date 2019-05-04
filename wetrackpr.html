@@ -1,0 +1,137 @@
+<!--THIS IS THE PROFILE PAGE-->
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style1.css">
+      <title>Profile</title>
+    
+  </head>
+  <body onload="data()">
+
+     <script type="text/javascript" src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.9.2/firebase.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js"></script> 
+      <!-- Firebase App is always required and must be first -->
+        <script src="/__/firebase/5.9.2/firebase-app.js"></script>
+
+    <!-- Add additional services that you want to use -->
+        <script src="/__/firebase/5.9.2/firebase-auth.js"></script>
+        <script src="/__/firebase/5.9.2/firebase-database.js"></script>
+        <script src="/__/firebase/5.9.2/firebase-messaging.js"></script>
+        <script src="/__/firebase/5.9.2/firebase-functions.js"></script>
+        <script src="/__/firebase/init.js"></script>
+
+        <script>
+         // Initialize Firebase
+         var config = {
+            apiKey: "AIzaSyCXStQMNfUZH3iwy6R5ysRA-RetOLEhN1I",
+            authDomain: "locationtracker-ec89a.firebaseapp.com",
+            databaseURL: "https://locationtracker-ec89a.firebaseio.com",
+            projectId: "locationtracker-ec89a",
+            storageBucket: "locationtracker-ec89a.appspot.com",
+            messagingSenderId: "557929837312"
+          };
+
+          firebase.initializeApp(config);
+          var database=firebase.database();
+         
+  
+        </script>
+        <script type="text/javascript" src="loc.js"></script>
+        <script type="text/javascript" src="db.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+                <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+      <header>
+          <nav class="navbar navbar-expand-lg custom-navbar sticky">
+              <div class="container  main-nav">
+                  <a class="navbar-brand" href="#home">ToDoReminder</a>
+                  <div class="collapse navbar-collapse justify-content-end " id="navbarSupportedContent">
+                    <ul class="navbar-nav ">
+                      <li class="nav-item active">
+                        <a class="nav-link" href="#">Profile<span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#my-list">My list</a>
+                      </li>
+                     
+                      <li class="nav-item">
+                        <a class="nav-link" href="#location">Update</a>
+                      </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="index.html">Sign Out</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+            </nav>
+      <div class="home-page" id="home">
+            
+            <div class="jumbotron text-center jumbotron-fluid bg-transparent">
+                <div class="container home-text">
+                  <h1>Welcome Back!</h1>
+                  <h3 class="text-white">Have a great day!</h3>
+                  <a class="btn btn-primary btn1" href="#location" role="button">Let's add to my list!</a>
+                </div>
+        </div>
+      </div>
+      </header>
+      <section id="location">
+          <h2 class="headings h2">Tell us about your schedule!</h2>
+          <form>
+            <div class="details text-centre">
+                    <div class="input-group ">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Your Street</span>
+                      </div>
+                      <textarea class="form-control" aria-label="With textarea" id="st" placeholder="AJC Bose road"></textarea>
+                    </div>
+
+                    <div class="input-group ">
+                      <div class="input-group-prepend ">
+                        <span class="input-group-text">Your City</span>
+                      </div>
+                      <textarea class="form-control" aria-label="With textarea" id="ci" placeholder="Kolkata"></textarea>
+                    </div>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">Your State</span>
+                      </div>
+                      <textarea class="form-control" aria-label="With textarea" id="sta"  placeholder="West Bengal"></textarea>
+                    </div>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">What do you need to do?</span>
+                      </div>
+                      <textarea class="form-control" aria-label="With textarea" id="task" placeholder="Buy a bottle"></textarea>
+                    </div>
+                    </form>
+                    </div>
+            
+         
+      </section>
+                    <button onclick="addi()">Submit</button>
+                    <p id="h"></p>
+                    <p id="k"></p>
+                    <p id="ans"></p>
+                
+      
+      <section id="my-list">
+          <h2 class="headings h2">Your to-do!</h2>
+      </section>
+      <footer id="footer">
+            <div class="container">
+                <p class="lead">
+                   Made with &hearts; by Mahak &amp; Aanisha
+                </p>
+            </div>
+            
+            </footer>
+    </body>
+</html>
